@@ -1,0 +1,31 @@
+TODO:
+	Change keys
+	Defect lowercase keys not recognized
+	Fix defect of no songs in chosen directory cause index out of range exc
+	Fix problem of exception thrown when closing folder open dialog with no selection 
+	Add recent directories to top of folder open dialog
+	Save window position settings
+	loading bar while loading songs
+	Allow touch scrolling
+	Keep lines in song from wrapping(http://stackoverflow.com/questions/16194569/how-can-i-prevent-wrapping-in-a-wpf-flowdocument-in-c-sharp-code)
+	show PDF's
+	Reload songs on directory change or selection change
+	Scan for directory changes, update list
+	Make blank lines 1/2 size
+	Remove blank lines at beginning of song
+	Export lyrics
+	New 2-dimensional array to hold lyric lines & chord lines
+	Hide Song list
+	Bold "Chorus", "Verse:", "Bridge:", "Vamp:"
+		Indent remaining lines
+	Make lines in Song list have more padding
+	Move Title & Key onto own toolbar with Current directory
+	Pinch zoom
+	Unit tests
+	
+DONE:	
+	Stop adding extra lyric space for [] around chords
+	Save setting of last song loaded 
+	Load songs only when selected
+	Move Title & Key out of lyric/chord area
+	Replace example song

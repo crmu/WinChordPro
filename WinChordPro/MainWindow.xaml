@@ -1,0 +1,153 @@
+﻿<Window x:Class="WinChordPro.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="The Water Way - Win ChordPro" Height="558" Width="740">
+    
+    <!--http://www.wpf-tutorial.com/rich-text-controls/richtextbox-control/-->
+    <Grid VerticalAlignment="Stretch" 
+          HorizontalAlignment="Stretch"
+          Width="Auto" 
+          Height="Auto" >
+          
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="128" />
+            <ColumnDefinition Width="590*" />
+        </Grid.ColumnDefinitions>
+        <ToolBar Grid.ColumnSpan="2" 
+                 Height="Auto" 
+                 HorizontalAlignment="Left"
+                 Name="toolBar1" 
+                 VerticalAlignment="Top"
+                 Width="718" >
+            <Button Content="Open Directory"
+                    FontWeight="DemiBold"
+                    Height="Auto" 
+                    HorizontalAlignment="Left" 
+                    Margin="12,7,0,0" 
+                    Name="buttonOpenDir" 
+                    VerticalAlignment="Top" 
+                    Width="Auto" 
+                    Click="buttonOpenDir_Click" />
+            <Button Content="Save Settings"
+                    FontWeight="DemiBold"
+                    Height="Auto" 
+                    HorizontalAlignment="Left" 
+                    Margin="12,7,0,0" 
+                    Name="buttonSaveSettings" 
+                    VerticalAlignment="Top" 
+                    Width="Auto" 
+                    Click="SaveSettings_Click" />
+            <Separator Height="15"
+                       HorizontalAlignment="Left" 
+                       Margin="12,7,0,0" 
+                       VerticalAlignment="Stretch" 
+                       Width="2"  />
+            <Button Name="buttonKeyUp"
+                    Content="^" 
+                    FontWeight="Bold"
+                    Height="Auto" 
+                    HorizontalAlignment="Left" 
+                    Margin="3,9,0,0" 
+                    VerticalAlignment="Top" 
+                    Width="20" 
+                    Click="KeyUp_Click" />
+            <Label Name="labelKey"
+                   Foreground="Blue"
+                   Content="Key: F"
+                   FontWeight="DemiBold"
+                   Height="Auto" 
+                   HorizontalAlignment="Left" 
+                   VerticalAlignment="Top"
+                   Margin="0,5,0,0" 
+                   Width="Auto"  />
+            <Button Name="buttonKeyDown"
+                    Content="v" 
+                    Height="Auto" 
+                    HorizontalAlignment="Left" 
+                    Margin="3,6,0,0" 
+                    VerticalAlignment="Top" 
+                    Width="15" 
+                    Click="KeyDown_Click"
+                    FontWeight="DemiBold" />
+            <Separator Height="15"
+                       HorizontalAlignment="Left" 
+                       Margin="12,7,0,0" 
+                       VerticalAlignment="Stretch" 
+                       Width="2"  />
+            <Button Name="buttonIncreaseFont"
+                    Content="Font+" 
+                    Height="Auto" 
+                    HorizontalAlignment="Left" 
+                    Margin="3,7,0,0" 
+                    VerticalAlignment="Top" 
+                    Width="Auto" 
+                    Click="IncreaseFontSize_Click" 
+                    FontWeight="DemiBold" />
+            <Button Name="buttonDecreaseFont"
+                    Content="Font-" 
+                    Height="Auto" 
+                    HorizontalAlignment="Left" 
+                    Margin="3,7,0,0" 
+                    VerticalAlignment="Top" 
+                    Width="Auto" 
+                    Click="DecreaseFontSize_Click" 
+                    FontWeight="DemiBold"/>
+        </ToolBar>
+        <ListBox Name="listBoxSongs" 
+                 Grid.Row="1" 
+                 HorizontalAlignment="Left" 
+                 Width="128" 
+                 SelectionChanged="listBoxSongs_SelectionChanged" 
+                 Margin="0,0,0,-1" />
+        <ScrollViewer VerticalScrollBarVisibility="Auto"
+                      CanContentScroll="True"
+                      IsHitTestVisible="True"
+                      HorizontalScrollBarVisibility="Auto"
+                      Grid.Row="1"
+                      Grid.Column="1">
+            <FlowDocumentScrollViewer  Grid.Row="1"
+                                   Grid.Column="1"
+                                   Name="fdViewer" 
+                                   IsManipulationEnabled="True" 
+                                   Margin="0,0,0,1"
+                                   FontFamily="Courier New"
+                                   FlowDirection="LeftToRight"
+                                   IsSelectionEnabled="True"
+                                   HorizontalScrollBarVisibility="Hidden"
+                                   VerticalScrollBarVisibility="Hidden"
+                                   >
+            <FlowDocumentScrollViewer.Resources>
+                <Style TargetType="{x:Type Paragraph}">
+                    <Setter Property="Margin" Value="0"/>
+                    <Setter Property="Padding" Value="0"/>
+                    <Setter Property="FontSize" Value="12"/>
+                </Style>
+            </FlowDocumentScrollViewer.Resources>
+            <FlowDocument FontFamily="Courier New"  
+                          MinPageWidth="250"
+                          LineStackingStrategy="BlockLineHeight"
+                          xml:space="preserve">
+                <Paragraph Foreground="Blue">               F     C              F</Paragraph>
+                <Paragraph Foreground="Black">There shall be light in the evening time</Paragraph>
+                <Paragraph Foreground="Blue">            Asus   A               Dm   F/C              Bb</Paragraph>
+                <Paragraph Foreground="Black">The path to glory  you will surely find      through the water way</Paragraph>
+                <Paragraph Foreground="Blue">          F            Dm        G         C</Paragraph>
+                <Paragraph Foreground="Black">It is the light today,  Baptized in Jesus' Name</Paragraph>
+                <Paragraph Foreground="Blue">          F    C                  F  </Paragraph>
+                <Paragraph Foreground="Black">Young and old, repent of all your sins</Paragraph>
+                <Paragraph Foreground="Blue">         Asus   A                Dm  </Paragraph>
+                <Paragraph Foreground="Black">Then the Holy   Ghost will enter in</Paragraph>
+                <Paragraph Foreground="Blue">    F       F        F      Dm  </Paragraph>
+                <Paragraph Foreground="Black">The evening time has come</Paragraph>
+                <Paragraph Foreground="Blue">       F                 C          F  </Paragraph>
+                <Paragraph Foreground="Black">'Tis a fact that God and Christ are one</Paragraph>
+            </FlowDocument>
+        </FlowDocumentScrollViewer>
+        </ScrollViewer>
+        <!--<TextBlock Grid.Column="1" Grid.Row="1" TextAlignment="Center" FontSize="12">Top Center</TextBlock>-->
+    </Grid>
+</Window>
